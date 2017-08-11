@@ -239,6 +239,15 @@ header {
   max-width: 550px;
   text-align: center;
   margin: 0 auto; }
+  .graphs__item:before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 42px;
+    background-image: url("../img/graph-logo-30x42.png");
+    position: relative;
+    left: -300px;
+    top: 150px; }
 
 html {
   font-family: 'Open Sans',"Helvetica Neue", "Helvetica", "Arial", "sans-serif";
