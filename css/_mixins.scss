@@ -1,0 +1,168 @@
+/*---------------------------------------------------------|
+|                MIXIN LIBRARY - Jan Kozánek               |
+----------------------------------------------------------*/
+
+@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -khtml-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+@mixin column-count($value) {
+    -webkit-column-count: $value; /* Chrome, Safari, Opera */
+    -moz-column-count: $value; /* Firefox */
+    column-count: $value;
+}
+
+@mixin column-gap($value) {
+    -webkit-column-gap: $value; /* Chrome, Safari, Opera */
+    -moz-column-gap: $value; /* Firefox */
+    column-gap: $value;
+}
+
+@mixin column-width($value) {
+    -webkit-column-width: $value; /* Chrome, Safari, Opera */
+    -moz-column-width: $value; /* Firefox */
+    column-width: $value;
+}
+
+@mixin transform($options...) {
+    @include css3-prefix(transform, $options);
+}
+
+@mixin transition($options...) {
+    @include css3-prefix(transition, $options);
+}
+
+@mixin border_radius($options) {
+    @include css3-prefix(border-radius, $options);
+}
+
+@mixin linear_gradient($angle, $colors...) {
+    background: nth(nth($colors, 1), 1); /* Fallback to get the first color - Old browsers */
+    background: -moz-linear-gradient($angle,  $colors); /* FF3.6-15 */
+    background: -webkit-linear-gradient($angle,  $colors); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(180deg - $angle,  $colors); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+//base html font-size needs to be 62.5%
+@function calculateRem($size) {
+    $remSize: $size / 10;
+    @return $remSize * 1rem;
+}
+
+/* calculates Rem size from Px. In case of browser not supporting Rem, it will use Px */
+@mixin font-size($size: 16, $line: $size * 1.5) {
+    font-size: ($size) + px;
+    line-height: ($line) + px;
+    font-size: calculateRem($size);
+    line-height: calculateRem($line);
+}
+
+/* Cross browser opacity compatibility */
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@keyframes custom_anim {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/*
+* @include triangle within a pseudo element and add positioning properties (ie. top, left)
+* $direction: up, down, left, right
+*/
+@mixin triangle($direction, $size: 6px, $color: #222){
+    content: '';
+    display: block;
+    position: absolute;
+    height: 0; width: 0;
+    @if ($direction == 'up'){
+        border-bottom: $size solid $color;
+        border-left: 1/2*$size solid transparent;
+        border-right: 1/2*$size solid transparent;
+    }
+    @else if ($direction == 'down'){
+        border-top: $size solid $color;
+        border-left: 1/2*$size solid transparent;
+        border-right: 1/2*$size solid transparent;
+    }
+    @else if ($direction == 'left'){
+        border-top: 1/2*$size solid transparent;
+        border-bottom: 1/2*$size solid transparent;
+        border-right: $size solid $color;
+    }
+    @else if ($direction == 'right'){
+        border-top: 1/2*$size solid transparent;
+        border-bottom: 1/2*$size solid transparent;
+        border-left: $size solid $color;
+    }
+}
+
+// Tooltip mixin (text content from an HTML5 data-tooltip property on the element )
+@mixin hui_tooltip($content: attr(data-tooltip), $direction: top) {
+    position: relative;
+    //text-decoration: underline dashed;
+    padding-bottom: 2px;
+    border-bottom: 1px dashed $underline-dashed-orange;
+    &:before, &:after {
+        display: none;
+        z-index: 98;
+    }
+    &:hover {
+        &:after { // for text bubble
+            content: $content;
+            display: block;
+            position: absolute;
+            height: 24px;
+            min-width: 115px;
+            padding: 0px;
+            font-size: 14px;
+            white-space: nowrap;
+            color: #fff;
+            //@include text-shadow(1px 1px #000);
+            @include border_radius(5px);
+            background-color: #464646;
+            text-align: center;
+        }
+        @if ($direction == 'top'){
+            &:before {
+                @include triangle(down, 10px, #464646);
+                top: -6px; margin-top: 0;
+                left: 42%;
+            }
+            &:after {
+                top: -30px;
+                left: 12%; margin-left: -20px;
+            }
+        }
+        @else if ($direction == 'bottom'){
+            &:before {
+                @include triangle(up, 6px, #464646);
+                top: auto; margin-top: 0;
+                bottom: -6px;
+                left: 47%;
+            }
+            &:after {
+                bottom: -28px;
+                left: 47%; margin-left: -20px;
+            }
+        }
+    }
+}
+
+
+//call like '@extent %clearfix' on parent container
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

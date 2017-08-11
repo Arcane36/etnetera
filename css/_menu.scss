@@ -1,0 +1,80 @@
+.main-menu {
+    display: inline-block;
+    float: right;
+    margin: 15px 0;
+    padding-left: 0;
+
+
+    @include mq("tablet", max) {
+        display: none;
+    }
+
+    &__subsection {
+        display: inline-block;
+        padding-left: 25px;
+    }
+
+    &__text {
+        @include font-size(18);
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $font-menu-black;
+        position: relative;
+        @include transition(all 0.3s ease-in-out 0s);
+
+        &:hover {
+            color: $font-menu-hover-orange;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: $font-menu-hover-orange;
+            visibility: hidden;
+            @include transform(scaleX(0));
+            @include transition(all 0.3s ease-in-out 0s);
+        }
+
+        &:hover:before{
+            visibility: visible;
+            @include transform(scaleX(1));
+        }
+
+        @include mq("desktop", max) {
+            @include font-size(12);
+        }
+
+    }
+
+    &__responsive {
+        display: block;
+        float: none;
+        animation: textSlideX 0.3s;
+
+        li {
+            display: block;
+            padding: 10px;
+            text-align: center;
+        }
+    }
+}
+
+.burger {
+    display: none;
+
+    @include mq("tablet", max) {
+        display: inline-block;
+        float: right;
+        margin: 15px 0;
+        padding: 0 10px;
+        @include font-size(18);
+        text-decoration: none;
+        color: $font-menu-hover-orange;
+        border: 1px solid $font-menu-hover-orange;
+        @include border_radius(20px);
+    }
+}

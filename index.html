@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Etnetera</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.css"/>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+</head>
+<body>
+    <header>
+        <a href="" title="Etnetera" class="logo"></a>
+        <a href="" class="burger" id="burger">Menu</a>
+
+        <ul class="main-menu" id="myMenu">
+            <li class="main-menu__subsection"><a href="#" class="main-menu__text">Domů</a></li>
+            <li class="main-menu__subsection"><a href="#" class="main-menu__text">Kdo jsme</a></li>
+            <li class="main-menu__subsection"><a href="#" class="main-menu__text">Co děláme</a></li>
+            <li class="main-menu__subsection"><a href="#" class="main-menu__text">Reference</a></li>
+            <li class="main-menu__subsection"><a href="#" class="main-menu__text">Práce u nás (4)</a></li>
+            <li class="main-menu__subsection"><a href="#" class="main-menu__text">kontakt</a></li>
+        </ul>
+
+    </header>
+
+    <section class="slider-main">
+        <button class="js-prev slider-arrows slider-arrows--prev"><</button>
+        <ul class="js-slider slider-home">
+            <li class="js-slider-item slider-main__item has-background-image active img1-bg">
+                <div class="center">
+
+                    <div class="text-wrapper">
+                        <h1 class="slider-main__header">Mobile Development</h1>
+                        <p class="slider-main__text">Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+                        <p class="slider-main__text">Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
+                    </div>
+                    <div class="button-wrapper"><a href="#" class="button right">Více o mobile</a></div>
+
+                </div>
+            </li>
+
+            <li class="js-slider-item slider-main__item has-background-image active img1-bg">
+                <div class="center">
+                    <div class="text-wrapper">
+                        <h1 class="slider-main__header">Mobile Development 2</h1>
+                        <p class="slider-main__text">Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. 2</p>
+                        <p class="slider-main__text">Dramatically maintain clicks-and-mortar solutions without functional solutions. 2</p>
+                    </div>
+                    <div class="button-wrapper"><a href="#" class="button right">Více o mobile 2</a></div>
+                </div>
+            </li>
+        </ul>
+        <button class="js-next slider-arrows slider-arrows--next">></button>
+    </section>
+
+    <section class="quick-news">
+        <div class="quick-news__date">Před 12 dny</div>
+        <div class="quick-news__text">Jiří Štěpán z Etnetera Activate poodhalil zákulisí vykutálené náborové kampaně.</div>
+        <div class="quick-news__link"><a href="#">Přečíst</a></div>
+    </section>
+
+    <section class="content">
+        <article class="center">
+            <h1 class="content__h1">Fronty u kávovaru</h1>
+            <div class="content__img"><img src="img/coffee-330x221.png"></div>
+            <p class="content__text">Arabica latte shop macchiato doppio coffee steamed. Brewed, macchiato grounds medium, eu breve grinder frappuccino americano. Pumpkin spice, caffeine chicory dark medium arabica macchiato instant rich. Et, single shot aged half and half lungo whipped, cinnamon cappuccino whipped id mazagran.</p>
+            <p class="content__text"><b>Con panna</b> sugar macchiato so macchiato in skinny variety mug that. A plunger pot acerbic, brewed medium java aromatic coffee. At mocha wings acerbic beans medium saucer. Cup extra sit half and half robust java crema turkish.</p>
+            <br>
+            <p class="content__text clear">Medium aroma cream qui medium coffee arabica, caffeine et <a href="#">caramelization cup</a> plunger pot. Eu, plunger pot organic dark, cinnamon, redeye wings fair trade whipped lungo crema. Carajillo caramelization americano, plunger pot, filter coffee foam siphon roast and java.</p>
+            <p class="content__text">Galão a, breve, at white, latte variety irish at flavour barista. Half and half, so, sweet, <span class="tt" data-tooltip="espresso!">affogato galão</span>, half and half sugar irish trifecta chicory. Single origin, espresso, con panna french press et steamed robust.</p>
+        </article>
+
+        <article class="center graphs">
+            <div class="graphs__item">
+                <canvas id="myChart" width="530" height="200"></canvas>
+            </div>
+            <div class="graphs__item">
+                <canvas id="myChart2" width="530" height="200"></canvas>
+            </div>
+        </article>
+
+        <article class="center">
+            <h3 class="content__h3">Více o kávě</h3>
+            <div class="newspaper">
+                <p class="content__text content__text--left-align">Shop robust café au lait, cortado that, kopi-luwak skinny sweet crema fair <b>trade aged</b>, cultivar medium decaffeinated medium siphon crema cappuccino macchiato froth roast cinnamon aroma crema. Con panna americano skinny blue mountain decaffeinated, trifecta barista sugar, in saucer in filter that. Roast sit, robusta aged spoon, filter beans blue mountain milk crema dark eu <a href="">affogato barista</a> caffeine grinder, aromatic instant cup as robusta steamed doppio. Aftertaste, kopi-luwak, cappuccino siphon beans galão decaffeinated mug, froth half and <b>half eu java roast</b>, lungo, id fair trade organic doppio filter instant carajillo.</p>
+                <p class="content__text content__text--left-align">Id siphon and, java, cappuccino milk cortado, siphon macchiato galão a irish flavour. Carajillo irish percolator steamed, medium galão latte, mocha est, medium, iced cappuccino americano, caramelization ristretto, in latte, flavour cup roast trifecta aged. Variety single origin steamed, at, galão bar turkish con panna cream aroma variety carajillo doppio cinnamon. Iced, single shot, est cup shop viennese dark crema macchiato wings single shot plunger pot foam aftertaste so to go white at acerbic a aftertaste.</p>
+                <p class="content__text content__text--left-align">Irish carajillo decaffeinated instant, pumpkin spice as, cup, dripper strong breve, est white crema viennese latte. Irish cup medium body organic, white americano galão plunger pot coffee, robust, carajillo, steamed, cream, java, cinnamon mazagran so caffeine latte flavour. <b>Shop, turkish iced</b> qui that steamed sweet, mazagran, macchiato est robusta spoon as, rich eu crema, chicory foam single shot organic sugar galão seasonal trifecta. Viennese half and half organic aged <a href="">extraction cup</a>, espresso irish latte mug grinder turkish variety.</p>
+            </div>
+        </article>
+    </section>
+
+
+    <footer class="footer">
+        <div class="center">
+
+            <div class="footer__container">
+                <div class="footer__container__copyright">Copyright</div>
+                <div class="footer__container__text">© 2015 Etnetera</div>
+                <br>
+                <div>Jsme hrdným členem <a href="#">Etnetera Group</a></div>
+                created by Jan Kozánek
+            </div>
+
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/slider.js"></script>
+    <script>
+        function rnd() {
+            return Math.floor((Math.random() * 10) + 1);
+        }
+
+        var datas = [];
+        for (i = 0; i < 30; i++) {
+            datas[i] = rnd();
+        }
+
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            showScale: false,
+            data: {
+                labels: ["8:00", "8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00","13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"],
+                datasets: [{
+                    label: '',
+                    data: datas,
+                    backgroundColor: []
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Pondělí',
+                    position: 'top',
+                    fontSize: 20,
+                    padding: 20
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        display: false
+                    }],
+                    xAxes: [{
+
+                        barThickness : 16,
+                        gridLines: {
+                            display: false
+                        },
+                        ticks: {
+                            maxTicksLimit: 15,
+                            autoSkip: true,
+                            maxRotation: 90,
+                            minRotation: 90
+                        }
+                    }]
+                }
+            }
+
+        });
+
+        var ctx = document.getElementById("myChart2").getContext('2d');
+        var myChart2 = new Chart(ctx, {
+            type: 'bar',
+            showScale: false,
+            data: {
+                labels: ["8:00", "8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00","13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"],
+                datasets: [{
+                    label: '',
+                    data: datas,
+                    backgroundColor: []
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Pondělí',
+                    position: 'top',
+                    fontSize: 20,
+                    padding: 20
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        display: false
+                    }],
+                    xAxes: [{
+
+                        barThickness : 16,
+                        gridLines: {
+                            display: false
+                        },
+                        ticks: {
+                            maxTicksLimit: 15,
+                            autoSkip: true,
+                            maxRotation: 90,
+                            minRotation: 90
+                        }
+                    }]
+                }
+            }
+
+        });
+
+
+        var bars = myChart.data.datasets[0];
+        var bars2 = myChart2.data.datasets[0];
+        for (i = 0; i < bars.data.length; i++) {
+
+            if (bars.data[i] > 0 && bars.data[i] <= 3) {
+                bars.backgroundColor[i] = 'rgba(255, 197, 155, 1)';
+                bars2.backgroundColor[i] = 'rgba(255, 197, 155, 1)';
+            } else if (bars.data[i] > 3 && bars.data[i] <= 6) {
+                bars.backgroundColor[i] = 'rgba(248, 140, 108, 1)';
+                bars2.backgroundColor[i] = 'rgba(248, 140, 108, 1)';
+            } else if (bars.data[i] > 6 && bars.data[i] <= 10) {
+                bars.backgroundColor[i] = 'rgba(230, 78, 33, 1)';
+                bars2.backgroundColor[i] = 'rgba(230, 78, 33, 1)';
+            }
+
+        }
+        myChart.update();
+        myChart2.update();
+    </script>
+</body>
+
+</html>

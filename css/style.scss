@@ -1,0 +1,201 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@import "variables";
+@import "mixins";
+@import "breakpoints";
+
+@import "header";
+@import "menu";
+@import "slider";
+@import "footer";
+@import "graph";
+
+html {
+    font-family: 'Open Sans',"Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+    font-size: 62.5%;
+}
+
+body {
+    background: $background-main-white;
+    margin: 0 auto;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: $anchor-orange;
+    &:hover {
+        font-weight: 600;
+    }
+}
+
+.logo {
+    //width: 150px;
+    //height: 50px;
+    display: inline-block;
+    background-image: url("../img/logo-150x50.png");
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+    height: 50px;
+    width: 10%;
+    min-width: 90px;
+}
+
+.quick-news {
+    text-align: center;
+    padding: 35px 0px;
+    @include font-size(16);
+
+    &__date {
+        display: inline-block;
+        color: $quick-news-font-grey;
+        text-transform: uppercase;
+        padding-right: 10px;
+        @include font-size(13);
+
+        @include mq("tablet", max) {
+            padding: 0;
+        }
+    }
+
+    &__text {
+        display: inline-block;
+        padding-right: 20px;
+
+        @include mq("tablet", max) {
+            padding: 0;
+        }
+
+    }
+
+    &__link {
+        display: inline-block;
+    }
+}
+
+.content {
+    background-color: $content-background-grey;
+    padding: 20px 10px 30px 10px;
+
+    &__h1, &__h3 {
+        padding: 10px 0;
+        margin: 0px;
+        @include font-size(40);
+        font-weight: 100;
+
+        @include mq("phone", max) {
+            @include font-size(30);
+        }
+    }
+
+    &__h3 {
+        @include font-size(30);
+    }
+
+    &__img {
+        display: block;
+        float: left;
+        padding: 10px 10px 10px 0;
+
+        @include mq("phone", max) {
+            padding: 10px 0;
+        }
+    }
+
+    &__text {
+        @include font-size(16);
+        text-align: justify;;
+        margin-top: 0;
+
+        &--left-align {
+            text-align: left;
+
+            @include mq("tablet", max) {
+                text-align: justify;
+            }
+        }
+    }
+}
+
+.newspaper {
+    @include column-count(2);
+    @include column-gap(149px);
+
+    & p:nth-child(1) {
+        width: 107%;
+
+        @include mq("tablet", max) {
+            width: 100%;
+        }
+    }
+
+    & p:nth-child(2) {
+        width: 103%;
+
+        @include mq("tablet", max) {
+            width: 100%;
+        }
+    }
+
+    @include mq("tablet", max) {
+        @include column-count(1);
+    }
+}
+
+.long {
+    height: 900px;
+    background: #923b27;
+}
+
+.tt {
+    @include hui_tooltip();
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 60px;
+    border: 1px solid $button-border-orange;
+    @include border_radius(30px);
+    background-color: $button-background-white;
+    color: $button-font-orange;
+    @include font-size(16);
+}
+
+.center {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+@keyframes textSlideX {
+    0% {
+        @include transform(scaleX(0));
+    }
+
+    100% {
+        @include transform(scaleX(1));
+    }
+}
+

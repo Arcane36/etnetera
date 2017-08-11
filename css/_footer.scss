@@ -1,0 +1,18 @@
+.footer {
+    &__container {
+        padding: 45px 0;
+        text-align: center;
+        @include font-size(16);
+
+        &__copyright {
+            color: $font-menu-hover-orange;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        &__text {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+}
